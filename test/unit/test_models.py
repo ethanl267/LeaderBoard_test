@@ -1,9 +1,12 @@
 from unittest import TestCase
-from flask import models
+from website.models import Note,Work,User,Team
 
 
-class Note(TestCase.unittest):
-    def test_create_models(self):
-        Note = Note(id=1)
+class TestModels(TestCase):
+    def test_note(self):
+        note = Note(data="test", date=20/5/2021, user_id=1)
+        self.assertEqual(note.data, "test", "tested")
+        self.assertEqual(note.date, 20/5/2021, "tested")
+        self.assertEqual(note.user_id, 1, "tested")
 
-        self.assertEqual(Note)
+    
